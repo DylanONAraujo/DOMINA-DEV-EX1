@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia Figaro</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+  <header class="cabecalho">
+
+    <h1 class="titulo_site">Barbearia Fígaro</h1>
+
+    <nav class="cabecalho_menu">
+      <a class="cabecalho_menu_link" href="index.html">Home</a>
+    </nav>
+  </header>
+
+
+  <h2 class="subtitulo_site"> Agende seu horário na Barbearia</h2>
+  <form class='forma_agendamento' id="forma_agendamento">
+    <label for="cliente">Nome do Cliente:</label>
+    <input type="text" id="cliente" required>
+    <label for="data">Data:</label>
+    <input type="date" id="data" required>
+    <label for="hora">Horário</label>
+    <input type="time" id="hora" required>
+    <label for="servico">Serviço:</label>
+    <select id="servico" required>
+      <option value="">Selecione</option>
+      <option value="corte_de_cabelo">Corte de Cabelo</option>
+      <option value="corte_de_barba">Barba</option>
+      <option value="corte_barba">Corte + Barba</option>
+      <option value="sobrancelha">Sobrancelha</option>
+    </select>
+    <button type="submit">Agendar</button>
+  </form>
+
+  <table id="tabela_agendamentos">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Data</th>
+        <th>Horário</th>
+        <th>Serviço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dylan</td>
+        <td>Batatinha</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('form-agendamento');
+    const tabela = document.querySelector('#tabela-agendamentos tbody');
+
+    window.addEventListener('load', () => {
+      const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+      agendamentos.forEach(({ cliente, data, hora, servico }) => {
+        adicionarNaTabela(cliente, data, hora, servico);
+      });
+    });
+
+
+    function adicionarNaTabela(cliente, data, hora, servico) {
+      const novaLinha = tabela.insertRow();
+      novaLinha.insertCell().textContent = cliente;
+      novaLinha.insertCell().textContent = data;
+      novaLinha.insertCell().textContent = hora;
+      novaLinha.insertCell().textContent = servico;
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const cliente = document.getElementById('cliente').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+      const servico = document.getElementById('servico').value;
+
+      const novaLinha = tabela.insertRow();
+      novaLinha.insertCell().textContent = cliente;
+      novaLinha.insertCell().textContent = data;
+      novaLinha.insertCell().textContent = hora;
+      novaLinha.insertCell().textContent = servico;
+
+      form.reset();
+    });
+
+    <footer class="rodape">
+      <h3>Desenvolvido por Dylan Araujo!</h3>
+    </footer>
+  </script>
+
+
+</body>
+
+</html>

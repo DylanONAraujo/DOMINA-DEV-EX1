@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --corprincipal:#40A2E3;
+    --corsecundaria:#FFF6E9;
+    --corterciario:#BBE2EC;
+    --corquaternario:#0D9276;
+    --corquinario:#000000;
+    --corsenario:#B0A695;
+    --corsetenario:#F3EEEA;
+
+    --font-primaria: 'Krona One', sans-serif;
+    --font-secundaria: 'Inter', sans-serif;
+    --font-terciario: 'Montserrat', sans-serif;
+    --font-quaternario: 'Epunda', sans-serif;
+}
+
+body{
+  font-family: var(--font-quaternario);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--corterciario);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.titulo_site {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--corprincipal);
+  text-shadow: 1px 1px 2px var(--corquaternario);
+}
+
+.cabecalho{
+
+    background-color:var(--corquinario);
+    padding: 20px;
+    text-align: center;
+
+}
+
+.cabecalho_menu{
+    display: flex;
+    color: var(--corsenario);
+    font-family: var(--font-primaria);
+    background-color:var(--corquinario);
+    gap: 80px;
+}
+
+.cabecalho_menu_link{
+    font-family:var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--corprincipal);
+    text-decoration: none;
+}
+
+.cabecalho_menu_link:hover{
+    color: var(--cor-quinta);
+}
+
+.subtitulo_site{
+    padding: 4% 0% 4% 0%;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--corquinario);
+
+}
+
+#tabela_agendamentos th {
+  background-color: #333;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 12px;
+}
+
+#tabela_agendamentos td {
+  font-size: 1em;
+  color: #444;
+  padding: 10px;
+}
+
+
+.forma_agendamento{
+    display:flex;
+    color: var(--corquinario);
+    font-family: var(--font-secundaria);
+    flex-direction: column;
+    justify-content: start;
+}
+
+.servico_item {
+  background-color: var(--corsecundaria);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 200px;
+  padding: 50%;
+}
+
+.servico_item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--corsenario);
+}
+
+.forma_agendamento {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: var(--corquaternario);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.forma_agendamento label,
+.forma_agendamento input,
+.forma_agendamento select,
+.forma_agendamento button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #333;
+  color: var(--corsecundaria);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#tabela_agendamentos {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+
+#tabela_agendamentos th,
+#tabela_agendamentos td {
+  border: 1px solid var(--corterciario);
+  padding: 10px;
+  text-align: center;
+}
+
+
