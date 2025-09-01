@@ -79,16 +79,7 @@
         adicionarNaTabela(cliente, data, hora, servico);
       });
     });
-
-
-    function adicionarNaTabela(cliente, data, hora, servico) {
-      const novaLinha = tabela.insertRow();
-      novaLinha.insertCell().textContent = cliente;
-      novaLinha.insertCell().textContent = data;
-      novaLinha.insertCell().textContent = hora;
-      novaLinha.insertCell().textContent = servico;
-    }
-
+    
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
